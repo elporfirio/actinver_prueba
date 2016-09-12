@@ -1,0 +1,6 @@
+<form form-validation valid-submit="$ctrl.signUp($ctrl.user)" on-success="signupctrl.successSignUp()" novalidate>
+    <input type="text" ng-model="$ctrl.user.email" required="email">
+    <input type="password" ng-model="$ctrl.user.password" required="password">
+    <input type="password" ng-model="$ctrl.user.confirmpassword" required="password">
+    <button>Crear Cuenta</button>
+</form>
