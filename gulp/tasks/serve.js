@@ -17,12 +17,12 @@ gulp.task('serve', ['enviroment', 'compile'], function(){
 
     gulp.src(config.paths.devfolder)
         .pipe(webserver({
-            livereload: true,
+            //livereload: true,
             //directoryListing: true,
             open: true,
             //fallback: 'index.html',
             // FIX PARA NODE en VAGRANT
-            host: '0.0.0.0',
+            //host: '0.0.0.0',
             port: 3000
         }));
 });

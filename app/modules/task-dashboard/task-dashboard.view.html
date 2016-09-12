@@ -1,10 +1,24 @@
-<button>Agregar una tarea</button>
+<button ng-click="taskctrl.showAddTask()" class="btn btn-default">Agregar una tarea</button>
 
+<br>
 <ul class="list-group">
-    <li class="list-group-item">
-        <input type="checkbox"> Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
+    <li class="list-group-item" ng-repeat="task in taskctrl.tasks">
+        <input type="checkbox"> {{ task.title }}
+        <p class="text-right">
+            <button class="btn btn-info" ng-click="taskctrl.showTask(task)"><i class="glyphicon glyphicon-eye-open"></i></button>
+            <button class="btn btn-success" ng-click="taskctrl.showEditTask(task)"><i class="glyphicon glyphicon-edit"></i></button>
+            <button class="btn btn-danger" ng-click="taskctrl.deleteTask(task)"><i class="glyphicon glyphicon-remove"></i></button>
+        </p>
+    </li>
+
 </ul>
+
+
+<task-form
+        editing="taskctrl.editingTask"
+        task="taskctrl.task"
+        on-success="taskctrl.successAddTask()"
+         on-update="taskctrl.successEditTask()"
+         on-delete="taskctrl.successDelTask()" ng-show="taskctrl.addingTask"></task-form>
+
+

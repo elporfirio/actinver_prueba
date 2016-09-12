@@ -1,6 +1,18 @@
 <form form-validation valid-submit="$ctrl.signUp($ctrl.user)" on-success="signupctrl.successSignUp()" novalidate>
-    <input type="text" ng-model="$ctrl.user.email" required="email">
-    <input type="password" ng-model="$ctrl.user.password" required="password">
-    <input type="password" ng-model="$ctrl.user.confirmpassword" required="password">
-    <button>Crear Cuenta</button>
+
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="text" ng-model="$ctrl.user.email" required="email" id="email">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" ng-model="$ctrl.user.password" required="password" id="password">
+    </div>
+
+    <div class="form-group">
+        <label for="confirmpassword">Password</label>
+        <input type="password" ng-model="$ctrl.user.confirmpassword" required="password" id="confirmpassword">
+    </div>
+    <button class="btn btn-primary">Crear Cuenta</button>
 </form>

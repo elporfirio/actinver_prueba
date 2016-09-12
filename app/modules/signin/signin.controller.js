@@ -6,16 +6,16 @@
 
     angular
         .module('actinver_todolist')
-        .controller('SignInController', SignInController);
+        .controller('SignInController',['$state', SignInController]);
 
     /* @ngInject */
-    function SignInController() {
+    function SignInController($state) {
         var vm = this;
         vm.successSignIn = successSignIn;
 
         vm.user = {
-            username: 'apitest@gmail.com',
-            password: '12345678z!A',
+            username: 'elporfirio@gmail.com',
+            password: 'ABcd1234*',
             grant_type: 'password'
         };
 
@@ -32,6 +32,8 @@
         function successSignIn(){
             console.info("TODO SALIO OKAY");
             vm.ok = true;
+
+            $state.go('tasks');
         }
     }
 

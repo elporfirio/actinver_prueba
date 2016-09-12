@@ -36,7 +36,19 @@ function routes ($stateProvider, $urlRouterProvider) {
         {
             name: 'tasks',
             url: '/tareas',
-            templateUrl: 'views/task-dashboard.view.html'
+            templateUrl: 'views/task-dashboard.view.html',
+            controller: 'TaskController',
+            controllerAs: 'taskctrl'
+        },
+        {
+            name: 'detail',
+            url: '/detalle/:taskid',
+            params: {
+                taskid: null
+            },
+            templateUrl: 'views/task-detail.view.html',
+            controller: 'DetailController',
+            controllerAs: 'detailctrl'
         }
         // {
         //     name: 'hello',

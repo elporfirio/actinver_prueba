@@ -6,17 +6,20 @@
 
     angular
         .module('actinver_todolist')
-        .controller('SignUpController', SignUpController);
+        .controller('SignUpController', ['$state', SignUpController]);
 
     /* @ngInject */
-    function SignUpController() {
+    function SignUpController($state) {
         var vm = this;
+
+        vm.successSignUp = successSignUp;
+
         vm.title = 'SignUpController';
-        vm.successSignIN = successSignIN;
 
         vm.user = {
-            email: 'algo@email.com',
-            password: '1234'
+            // email: 'elporfirio@gmail.com',
+            // password: 'ABcd1234*',
+            // confirmpassword: 'ABcd1234*'
         };
 
         vm.ok = false;
@@ -30,8 +33,8 @@
         }
 
         function successSignUp(){
-            console.info("TODO SALIO OKAY");
-            vm.ok = true;
+            alert("Registrado");
+            $state.go('home')
         }
     }
 
